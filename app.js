@@ -1,8 +1,5 @@
 'use strict';
 
-// var randCust = function (storeName) {
-  // return Math.floor(Math.random() * (storeName.maxCust - storeName.minCust)) + storeName.minCust;
-// };
 
 var cookieStorePike = {
   location: '1st and Pike',
@@ -19,6 +16,8 @@ for (var i = 15; i > 0; i --) {
   var hour = cookieStorePike.randCust();
   cookieStorePike.custEachHour.push(hour);
 }
+console.log(cookieStorePike.custEachHour);
+
 
 var cookieStoreSeatac = {
   location: 'SeaTac Airport',
@@ -26,14 +25,18 @@ var cookieStoreSeatac = {
   minCust: 3,
   maxCust: 24,
   aveCookieSale: 1.2,
-  randCust: function getRandomInt(min, max) {
-    min = Math.ceil(3);
-    max = Math.floor(24);
-    return Math.floor(Math.random() * (max - min)) + min;
+  randCust: function () {
+    return Math.floor(Math.random() * (this.maxCust - this.minCust)) + this.minCust;
   }
 };
+for (var i = 15; i > 0; i --) {
+  var hour = cookieStorePike.randCust();
+  cookieStorePike.custEachHour.push(hour);
+}
+console.log(cookieStoreSeatac.custEachHour);
 
-var cookieSeattleCenter = {
+
+var cookieStoreSeaCent = {
   location: 'Seattle Center',
   locationurl: '',
   minCust: 11,
@@ -43,25 +46,42 @@ var cookieSeattleCenter = {
     return Math.floor(Math.random() * (this.maxCust - this.minCust)) + this.minCust;
   }
 };
+for (var i = 15; i > 0; i --) {
+  var hour = cookieStoreSeaCent.randCust();
+  cookieStorePike.custEachHour.push(hour);
+}
+console.log(cookieStoreSeaCent.custEachHour);
 
-var cookieStoreCapitolHill = {
+
+var cookieStoreCapHill = {
   location: 'Capitol Hill',
   locationurl: '',
   minCust: 20,
   maxCust: 38,
   aveCookieSale: 2.3,
   randCust: function () {
-      return Math.floor(Math.random() * (this.maxCust - this.minCust)) + this.minCust;
+    return Math.floor(Math.random() * (this.maxCust - this.minCust)) + this.minCust;
   },
-  // hourCust: this.randCust(this.minCust, this.maxCust)
 };
-cookieStoreCapitolHill.randCust();
+for (var i = 15; i > 0; i --) {
+  var hour = cookieStoreCapHill.randCust();
+  cookieStoreCapHill.custEachHour.push(hour);
+}
+console.log(cookieStoreCapHill.custEachHour);
 
-// var cookieStoreAlki = {
-//   location: 'Alki',
-//   locationurl: '',
-//   minCust: 2,
-//   maxCust: 16,
-//   aveCookieSale: 4.6,
-//   randCust: "jhfgkjyg"
-// }
+
+var cookieStoreAlki = {
+  location: 'Alki',
+  locationurl: '',
+  minCust: 2,
+  maxCust: 16,
+  aveCookieSale: 4.6,
+  randCust: function () {
+    return Math.floor(Math.random() * (this.maxCust - this.minCust)) + this.minCust;
+  }
+};
+
+for (var i = 15; i > 0; i --) {
+  var hour = cookieStoreAlki.randCust();
+  cookieStoreAlki.custEachHour.push(hour);
+}
