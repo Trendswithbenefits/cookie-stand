@@ -25,30 +25,35 @@ var cookieStoreSeatac = {
   minCust: 3,
   maxCust: 24,
   aveCookieSale: 1.2,
+  custEachHour: [],
   randCust: function () {
     return Math.floor(Math.random() * (this.maxCust - this.minCust)) + this.minCust;
   }
 };
 for (var i = 15; i > 0; i --) {
-  var hour = cookieStorePike.randCust();
-  cookieStorePike.custEachHour.push(hour);
+  var hour = cookieStoreSeatac.randCust();
+  cookieStoreSeatac.custEachHour.push(hour);
 }
+
 console.log(cookieStoreSeatac.custEachHour);
 
 
-var cookieStoreSeaCent = {
+var cookieStoreSeaCent =
+{
   location: 'Seattle Center',
   locationurl: '',
   minCust: 11,
   maxCust: 38,
   aveCookieSale: 6.3,
-  randCust: function () {
+  custEachHour: [],
+  randCust: function ()
+  {
     return Math.floor(Math.random() * (this.maxCust - this.minCust)) + this.minCust;
   }
 };
 for (var i = 15; i > 0; i --) {
   var hour = cookieStoreSeaCent.randCust();
-  cookieStorePike.custEachHour.push(hour);
+  cookieStoreSeaCent.custEachHour.push(hour);
 }
 console.log(cookieStoreSeaCent.custEachHour);
 
@@ -59,7 +64,9 @@ var cookieStoreCapHill = {
   minCust: 20,
   maxCust: 38,
   aveCookieSale: 2.3,
-  randCust: function () {
+  custEachHour: [],
+  randCust: function ()
+  {
     return Math.floor(Math.random() * (this.maxCust - this.minCust)) + this.minCust;
   },
 };
@@ -70,13 +77,16 @@ for (var i = 15; i > 0; i --) {
 console.log(cookieStoreCapHill.custEachHour);
 
 
-var cookieStoreAlki = {
+var cookieStoreAlki =
+{
   location: 'Alki',
   locationurl: '',
   minCust: 2,
   maxCust: 16,
   aveCookieSale: 4.6,
-  randCust: function () {
+  custEachHour: [],
+  randCust: function ()
+  {
     return Math.floor(Math.random() * (this.maxCust - this.minCust)) + this.minCust;
   }
 };
@@ -85,3 +95,4 @@ for (var i = 15; i > 0; i --) {
   var hour = cookieStoreAlki.randCust();
   cookieStoreAlki.custEachHour.push(hour);
 }
+console.log(cookieStoreAlki.custEachHour);
