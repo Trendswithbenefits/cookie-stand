@@ -1,6 +1,5 @@
 'use strict';
 
-
 var cookieStorePike = {
   location: '1st and Pike',
   locationurl: 'https://www.google.com/maps/place/1st+Ave+%26+Pike+St,+Seattle,+WA+98101/@47.6088188,-122.3422157,17z/data=!3m1!4b1!4m5!3m4!1s0x54906ab2f8f1e7f5:0xbb338c128f949a19!8m2!3d47.6088152!4d-122.340027',
@@ -26,6 +25,12 @@ var cookieStorePike = {
 };
 cookieStorePike.cookieGen();
 console.log('The hourly cookie sales at the First and Pike location are:',cookieStorePike.cookieEachHour);
+
+//Need a function to add all the elements of the array
+
+for (i = 0; i < cookieStorePike.cookieEachHour.length; i ++) {
+  cookieEachHour += 1;
+}
 
 
 
