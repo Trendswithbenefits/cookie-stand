@@ -21,6 +21,8 @@ for (var i = 15; i > 0; i --) {
 console.log(cookieStorePike.custEachHour);
 
 
+
+
 var cookieStoreSeatac = {
   location: 'SeaTac Airport',
   locationurl: '',
