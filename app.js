@@ -1,6 +1,8 @@
 'use strict';
 
 
+//I have absolutely nothing done for the constructor assignment. I'm still figuring out Monday's assignment. :-(
+
 var cookieStorePike = {
   location: '1st and Pike',
   locationurl: 'https://www.google.com/maps/place/1st+Ave+%26+Pike+St,+Seattle,+WA+98101/@47.6088188,-122.3422157,17z/data=!3m1!4b1!4m5!3m4!1s0x54906ab2f8f1e7f5:0xbb338c128f949a19!8m2!3d47.6088152!4d-122.340027',
