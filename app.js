@@ -1,5 +1,8 @@
 'use strict';
 
+var timePoint = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
+var allCookieStores = [];
+
 var cookieStorePike = {
   location: '1st and Pike',
   locationurl: 'https://www.google.com/maps/place/1st+Ave+%26+Pike+St,+Seattle,+WA+98101/@47.6088188,-122.3422157,17z/data=!3m1!4b1!4m5!3m4!1s0x54906ab2f8f1e7f5:0xbb338c128f949a19!8m2!3d47.6088152!4d-122.340027',
@@ -17,7 +20,7 @@ var cookieStorePike = {
   //function for taking random # of customers, mutiplying them by the number of cookies
   //bought each hour, and then pushing the resulting information into the custEachHour array
   cookieGen: function() {
-    for (var i = (this.storeClose - this.storeOpen); i > 0; i --) {
+    for (var i = 0; i < timePoint.length; i ++) {
       var cookieHour = this.randCust()*this.aveCookieSale;
       this.cookieEachHour.push(Math.round(cookieHour));
     }
@@ -28,10 +31,43 @@ console.log('The hourly cookie sales at the First and Pike location are:',cookie
 
 //Need a function to add all the elements of the array
 
-for (i = 0; i < cookieStorePike.cookieEachHour.length; i ++) {
+// for (var i = 0; i < cookieStorePike.cookieEachHour.length; i ++) {
+//   cookieEachHour += 1;
+// }
+//constructor
+
+var CookieStore = {
+  this.location = location,
+  this.locationurl = locationurl,
+  minCust: 23,
+  maxCust: 65,
+  aveCookieSale: 6.3,
+  //array for storing hourly cookie sales
+  this.cookieEachHour = [],
+  //function for generating random number of customers
+  randCust: function() {
+    return Math.floor(Math.random() * (this.maxCust - this.minCust)) + this.minCust;
+  },
+  //function for taking random # of customers, mutiplying them by the number of cookies
+  //bought each hour, and then pushing the resulting information into the custEachHour array
+  cookieGen: function() {
+    for (var i = 0; i < timePoint.length; i ++) {
+      var cookieHour = this.randCust()*this.aveCookieSale;
+      this.cookieEachHour.push(Math.round(cookieHour));
+    }
+  }
+};
+
+CookieStore.prototype.allCookieStores
+
+cookieStorePike.cookieGen();
+console.log('The hourly cookie sales at the First and Pike location are:',cookieStorePike.cookieEachHour);
+
+//Need a function to add all the elements of the array
+
+for (var i = 0; i < cookieStorePike.cookieEachHour.length; i ++) {
   cookieEachHour += 1;
 }
-
 
 
 
