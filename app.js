@@ -15,7 +15,6 @@ function CookieStore(storeName,minCust,maxCust,aveCookieSale) {
   //setting initial value of cookieEachHour array sum to 0
   this.cookieSum = 0;
   allCookieStores.push(this);
-
 }
 
 //function for calculating total number of cookies
@@ -28,12 +27,6 @@ CookieStore.prototype.cookieArrSum = function() {
 };
 
 
-//function for generating random number of customers
-
-// CookieStore.prototype.randCust = function() {
-//  Math.floor(Math.random() * (this.maxCust - this.minCust)) + this.minCust;
-// };
-
 //function for taking random # of customers, mutiplying them by the number of cookies
 //bought each hour, and then pushing the resulting information into the custEachHour array
 
@@ -45,29 +38,15 @@ CookieStore.prototype.cookieGen = function() {
   }
 };
 
-// CookieStore.prototype.cookieGen = function() {
-//   for (var i = 0; i < timePoint.length; i ++) {
-//     var cookieHour = this.randCust()*this.aveCookieSale;
-//     this.cookieEachHour.push(Math.round(cookieHour));
-//   }
-// };
-
-
 var cookieStorePike = new CookieStore('First and Pike',23, 65, 6.3);
 console.log(cookieStorePike.cookieGen());
-
 var cookieStoreSeatac = new CookieStore('SeaTac',3,24,1.2);
 var cookieStoreSeaCent = new CookieStore('Seattle Center',11,38,6.3);
 var cookieStoreCapHill = new CookieStore('Capitol Hill',20,38,2.3);
 var cookieStoreAlki = new CookieStore('Alki',2,16,4.6);
 console.log(allCookieStores);
 
-// var theadEl = document.getElementById('hours');
-// var thEl = document.createElement('th');
-// thEl.textContent = 'hello';
-// theadEl.appendChild(thEl);
-
-//function to print the hours
+//function to print the hours to the table header
 function renderHours() {
   var theadEl = document.getElementById('hours');
 //empty element for the far left cell of the header row
@@ -98,7 +77,6 @@ CookieStore.prototype.renderCookies = function() {
     trEl.appendChild(tdEl);
   }
   tdEl = document.createElement('th');
-  //put back some text in the below text content line
   tdEl.textContent = this.cookieArrSum();
   trEl.appendChild(tdEl);
 };
@@ -107,7 +85,7 @@ CookieStore.prototype.renderCookies = function() {
 //Calling all the functions for each store
 //*****************************************
 
-//Alki::
+//Alki
 
 //Generate cookies at timepoints
 cookieStoreAlki.cookieGen();
@@ -139,9 +117,9 @@ cookieStoreSeatac.renderCookies();
 
 
 
-// *********************************
+// ***********************************
 // Beware: Thar Be Corpse Code Below!!
-// *********************************
+// ***********************************
 
 // var cookieStorePike = {
 //   location: '1st and Pike',
