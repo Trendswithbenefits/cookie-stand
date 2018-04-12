@@ -112,7 +112,8 @@ CookieStore.prototype.renderCookies = function() {
   tdEl.textContent = this.cookieSum;
   trEl.appendChild(tdEl);
 };
-
+cookieStoreAlki.cookieGen();
+console.log('The hourly cookie sales for the Alki location are:', cookieStoreAlki.cookieEachHour);
 
 // cookieStoreAlki.cookieSum();
 cookieStoreAlki.cookieGen();
