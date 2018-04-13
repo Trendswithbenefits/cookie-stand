@@ -1,1 +1,20 @@
 font-family: 'McLaren', cursive;
+
+*{
+  font-family: sans-serif;
+}
+
+header {
+max-height: 50px;
+margin: auto;
+}
+
+h1 {
+  margin: auto;
+  position: relative 
+}
+
+#topsalmon {
+  margin: center;
+  max-height: 50px;
+}
