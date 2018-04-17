@@ -1,20 +1,31 @@
-font-family: 'McLaren', cursive;
-
-*{
+* {
   font-family: sans-serif;
 }
-
-header {
-max-height: 50px;
-margin: auto;
-}
+font-family: 'McLaren', cursive;
 
 h1 {
-  margin: auto;
-  position: relative 
+  font-size: 16px;
 }
 
-#topsalmon {
-  margin: center;
+#disclaimerGross {
+  font-size: 1.5em;
+}
+
+#cookiesales {
+margin: auto;
+
+}
+
+#salmonmascot {
+  margin: auto;
   max-height: 50px;
+  }
+
+input {
+  display: block;
+  margin: 10px;
+}
+
+button {
+  cursor: pointer:
 }

@@ -15,11 +15,10 @@ function CookieStore(storeName,minCust,maxCust,aveCookieSale) {
   //setting initial value of cookieEachHour array sum to 0
   this.cookieSum = 0;
   allCookieStores.push(this);
-
 }
 
 //function for calculating total number of cookies
-CookieStore.prototype.cookieSum = function() {
+CookieStore.prototype.cookieArrSum = function() {
   this.cookieSum = 0;
   for (var i  = 0; i < timePoint.length; i++) {
     this.cookieSum += this.cookieEachHour[i];
@@ -27,11 +26,6 @@ CookieStore.prototype.cookieSum = function() {
   return this.cookieSum;
 };
 
-//function for generating random number of customers
-
-// CookieStore.prototype.randCust = function() {
-//  Math.floor(Math.random() * (this.maxCust - this.minCust)) + this.minCust;
-// };
 
 //function for taking random # of customers, mutiplying them by the number of cookies
 //bought each hour, and then pushing the resulting information into the custEachHour array
@@ -44,30 +38,15 @@ CookieStore.prototype.cookieGen = function() {
   }
 };
 
-// CookieStore.prototype.cookieGen = function() {
-//   for (var i = 0; i < timePoint.length; i ++) {
-//     var cookieHour = this.randCust()*this.aveCookieSale;
-//     this.cookieEachHour.push(Math.round(cookieHour));
-//   }
-// };
-
-
 var cookieStorePike = new CookieStore('First and Pike',23, 65, 6.3);
-
-console.log(allCookieStores);
 console.log(cookieStorePike.cookieGen());
-
 var cookieStoreSeatac = new CookieStore('SeaTac',3,24,1.2);
 var cookieStoreSeaCent = new CookieStore('Seattle Center',11,38,6.3);
 var cookieStoreCapHill = new CookieStore('Capitol Hill',20,38,2.3);
 var cookieStoreAlki = new CookieStore('Alki',2,16,4.6);
+console.log(allCookieStores);
 
-// var theadEl = document.getElementById('hours');
-// var thEl = document.createElement('th');
-// thEl.textContent = 'hello';
-// theadEl.appendChild(thEl);
-
-//function to print the hours
+//function to print the hours to the table header
 function renderHours() {
   var theadEl = document.getElementById('hours');
 //empty element for the far left cell of the header row
@@ -84,16 +63,6 @@ function renderHours() {
 }
 renderHours();
 
-//function to sum the cookies sold over the course of the day
-// CookieStore.prototype.storeCookieTotal = function() {
-  // var cookieSum = 0;
-//   for (var i  = 0; i < timePoint.length; i++) {
-//     i += this.cookieEachHour[i];
-//   }
-//   return cookieSum;
-// };
-
-
 //function to print the store name in a row and then print the number of cookies sold at each hour
 CookieStore.prototype.renderCookies = function() {
   var tbodyEl = document.getElementById('cookiesneeded');
@@ -108,38 +77,48 @@ CookieStore.prototype.renderCookies = function() {
     trEl.appendChild(tdEl);
   }
   tdEl = document.createElement('th');
-  //put back some text in the below text content line
-  tdEl.textContent = this.cookieSum;
+  tdEl.textContent = this.cookieArrSum();
   trEl.appendChild(tdEl);
 };
-cookieStoreAlki.cookieGen();
-console.log('The hourly cookie sales for the Alki location are:', cookieStoreAlki.cookieEachHour);
 
-// cookieStoreAlki.cookieSum();
+//*****************************************
+//Calling all the functions for each store
+//*****************************************
+
+//Alki
+//Generate cookies at timepoints
 cookieStoreAlki.cookieGen();
+//Add timepoint cookie amounts to create a total
+cookieStoreAlki.cookieArrSum();
+//Render all of the above to the screen via HTML
 cookieStoreAlki.renderCookies();
-// cookieStoreCapHill.storeCookieTotal();
+
+
+//Capitol Hill
 cookieStoreCapHill.cookieGen();
+cookieStoreCapHill.cookieArrSum();
 cookieStoreCapHill.renderCookies();
+
+//First and Pike
 cookieStorePike.cookieGen();
+cookieStorePike.cookieArrSum();
 cookieStorePike.renderCookies();
+
+//Seattle Center
 cookieStoreSeaCent.cookieGen();
+cookieStoreSeaCent.cookieArrSum();
 cookieStoreSeaCent.renderCookies();
+
+//SeaTac
 cookieStoreSeatac.cookieGen();
+cookieStoreSeatac.cookieArrSum();
 cookieStoreSeatac.renderCookies();
 
-// function storeCookieTotal() {
-//   for (var i  = 0; i < timePoint.length; i++) {
-//     cookieSum  += cookieEachHour[i];
-//   }
 
 
-
-
-
-// *********************************
-// Thar Be Corpse Code Below!!
-// *********************************
+// ***********************************
+// Beware: Thar Be Corpse Code Below!!
+// ***********************************
 
 // var cookieStorePike = {
 //   location: '1st and Pike',
