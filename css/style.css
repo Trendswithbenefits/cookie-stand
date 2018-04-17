@@ -1,5 +1,7 @@
+* {
+  font-family: sans-serif;
+}
 font-family: 'McLaren', cursive;
-
 
 
 h1 {
@@ -20,3 +22,11 @@ margin: auto;
   max-height: 50px;
   }
 
+input {
+  display: block;
+  margin: 10px;
+}
+
+cd ..button {
+  cursor: pointer:
+}
