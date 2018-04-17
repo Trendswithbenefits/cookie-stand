@@ -86,7 +86,6 @@ CookieStore.prototype.renderCookies = function() {
 //*****************************************
 
 //Alki
-
 //Generate cookies at timepoints
 cookieStoreAlki.cookieGen();
 //Add timepoint cookie amounts to create a total

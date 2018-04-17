@@ -3,7 +3,6 @@
 }
 font-family: 'McLaren', cursive;
 
-
 h1 {
   font-size: 16px;
 }
@@ -27,6 +26,6 @@ input {
   margin: 10px;
 }
 
-cd ..button {
+button {
   cursor: pointer:
 }
