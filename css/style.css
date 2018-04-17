@@ -1,19 +1,14 @@
 * {
   font-family: sans-serif;
 }
-font-family: 'McLaren', cursive;
+/* font-family: 'McLaren', cursive; */
 
 h1 {
-  font-size: 16px;
+  font-size: 2em;
 }
 
 #disclaimerGross {
   font-size: 1.5em;
-}
-
-#cookiesales {
-margin: auto;
-
 }
 
 #salmonmascot {
@@ -22,10 +17,64 @@ margin: auto;
   }
 
 input {
-  display: block;
+  /* display: block; */
   margin: 10px;
+  width: 50px;
 }
 
-button {
-  cursor: pointer:
+table {
+  margin: auto;
+  border: solid;
+  border-width: 10px;
+  border-color: #444;
+}
+
+thead {
+  font-size: 20px;
+}
+
+td {
+  empty-cells: hide;
+  padding: 3px;
+  border-radius: 2px;
+  min-width: 50px;
+  border-style: solid;
+  border-color: salmon;
+  border-width: 2px;
+  text-align: center;
+}
+
+th {
+  empty-cells: hide;
+  padding: 3px;
+  border-radius: 2px;
+  min-width: 50px;
+  border-style: solid;
+  border-color: salmon;
+  border-width: 3px;
+  text-align: center;
+}
+
+form {
+  margin-top: 25px;
+}
+
+form p {
+  font-size: 20px;
+}
+
+#storeNameInput {
+  min-width: 200px;
+}
+
+#storeSubmit {
+  cursor: pointer;
+  width: 220px;
+}
+
+fieldset {
+  border: solid;
+  border-width: 5px;
+  border-color: black;
+  padding: 5px;
 }

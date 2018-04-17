@@ -85,34 +85,63 @@ CookieStore.prototype.renderCookies = function() {
 //Calling all the functions for each store
 //*****************************************
 
-//Alki
-//Generate cookies at timepoints
-cookieStoreAlki.cookieGen();
-//Add timepoint cookie amounts to create a total
-cookieStoreAlki.cookieArrSum();
-//Render all of the above to the screen via HTML
-cookieStoreAlki.renderCookies();
+// //Alki
+// //Generate cookies at timepoints
+// cookieStoreAlki.cookieGen();
+// //Add timepoint cookie amounts to create a total
+// cookieStoreAlki.cookieArrSum();
+// //Render all of the above to the screen via HTML
+// cookieStoreAlki.renderCookies();
 
 
-//Capitol Hill
-cookieStoreCapHill.cookieGen();
-cookieStoreCapHill.cookieArrSum();
-cookieStoreCapHill.renderCookies();
+// //Capitol Hill
+// cookieStoreCapHill.cookieGen();
+// cookieStoreCapHill.cookieArrSum();
+// cookieStoreCapHill.renderCookies();
 
-//First and Pike
-cookieStorePike.cookieGen();
-cookieStorePike.cookieArrSum();
-cookieStorePike.renderCookies();
+// //First and Pike
+// cookieStorePike.cookieGen();
+// cookieStorePike.cookieArrSum();
+// cookieStorePike.renderCookies();
 
-//Seattle Center
-cookieStoreSeaCent.cookieGen();
-cookieStoreSeaCent.cookieArrSum();
-cookieStoreSeaCent.renderCookies();
+// //Seattle Center
+// cookieStoreSeaCent.cookieGen();
+// cookieStoreSeaCent.cookieArrSum();
+// cookieStoreSeaCent.renderCookies();
 
-//SeaTac
-cookieStoreSeatac.cookieGen();
-cookieStoreSeatac.cookieArrSum();
-cookieStoreSeatac.renderCookies();
+// //SeaTac
+// cookieStoreSeatac.cookieGen();
+// cookieStoreSeatac.cookieArrSum();
+// cookieStoreSeatac.renderCookies();
+
+function callingAllCookieStores() {
+  for (var i = 0; i < allCookieStores.length; i++) {
+    allCookieStores[i].cookieGen();
+    allCookieStores[i].cookieArrSum();
+    allCookieStores[i].renderCookies();
+  }
+}
+callingAllCookieStores();
+
+//**********************************************
+// New store entry code
+//**********************************************
+
+//grab store form input
+
+function onAddStoreFormSubmit(event) {
+  event.preventDefault();
+  console.log('The form was submitted');
+  var formElement = event.target;
+  var newStore = new CookieStore(formElement.storeName.value, formElement.minCust.value, formElement.maxCust.value, formElement.aveCookieSale.value);
+  newStore.cookieGen();
+  newStore.cookieArrSum();
+  newStore.renderCookies();
+}
+
+var tableFormElement = document.getElementById('addStoreForm');
+tableFormElement.addEventListener('submit', onAddStoreFormSubmit);
+console.log('hi');
 
 
 
