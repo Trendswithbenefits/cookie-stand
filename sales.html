@@ -9,7 +9,7 @@
   <body>
     <br>
 
-    <h1>Cookies needed by location each day</h1>
+    <h1 id="test">Cookies needed by location each day</h1>
       <br>
     <a href="index.html">Home</a>
       <div>
@@ -18,13 +18,17 @@
           <tbody id="cookiesneeded"></tbody>
           <tfoot id="cookietotal"></tfoot>
         </table>
-        <form action="">
-          <p>Use this form to create a new store in the table</p>
-          <input type="text" name="Store name" id="">
-          <input type="number" name="" id="mincust">
-          <input type="number" name="" id="maxcust">
-          <input type="number" name="" id="">
-          <input type="button" value="Submit">
+      </div>
+      <div>
+        <form id="addStoreForm" action="">
+          <fieldset id="newStoreForm">
+            <p>Use this form to create a new store in the table:</p>
+            <label for="storeNameInput">Store Name:</label><input type="text" name="storeName" id="storeNameInput">
+            <label for="minCustInput">Minimum Number of Customers:</label><input type="number" name="minCust" id="minCustInput"></label>
+            <label for="maxCustInput">Maximum Number of Customers:</label><input type="number" name="maxCust" id="maxCustInput"></label>
+            <label for="aveCookieSaleInput">Average Cookie Sale:</label><input type="number" name="aveCookieSale" id="aveCookieSaleInput" step="0.1"></label>
+            <input type="submit" value="Click here to create a new store entry" id="storeSubmit"></label>
+          </fieldset>
         </form>
           
       </div>
