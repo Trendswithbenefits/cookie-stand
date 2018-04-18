@@ -143,7 +143,32 @@ var tableFormElement = document.getElementById('addStoreForm');
 tableFormElement.addEventListener('submit', onAddStoreFormSubmit);
 console.log('hi');
 
+//function to render footer and provide hourly cookie totals
 
+function cookieFoot() {
+  var allTheCookies = 0;
+  var footerEl =  document.getElementById('cookietotal');
+  footerEl.innerHTML = '';
+  var trEl = document.createElement('tr');
+  var tdEl = document.createElement('td');
+  tdEl.textContent = 'Hourly total';
+  trEl.appendChild(tdEl);
+  for (var i = 0; i < timePoint.length; i ++) {
+    var totalCookieEachHour = 0;
+      for (var j = 0; i < allCookieStores.length; j ++) {
+      totalCookieEachHour += allCookieStores[j].cookieEachHour[i];
+      allTheCookies += allCookieStores[j].cookieEachHour[i];
+      }
+    tdEl = document.createElement('td');
+    tdEl.textContent = totalCookieEachHour;
+    trEl.appendChild(tdEl);
+  } 
+  tdEl = document.createElement('td');
+  tdEl.textContent = allTheCookies;
+  trEl.appendChild(tdEl);
+  footerEl.appendChild(trEl);
+}
+cookieFoot();
 
 // ***********************************
 // Beware: Thar Be Corpse Code Below!!
