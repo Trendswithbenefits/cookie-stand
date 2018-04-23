@@ -7,7 +7,36 @@ body {
   background-image: url("img/PikePlaceMarket-DSC01983b.jpg");
 }
 
+div {
+  margin: 15px auto;
+  border-style: outset;
+  border-color: salmon;
+  border-width: 6px;
+  max-width: 80%;
+  box-sizing: border-box;
+
+}
+
+/* #tableDiv {
+  margin: auto;
+} */
+
+body {
+  background-image: url("../img/pikePlace-DSC01983b.jpg");
+}
+
 h1 {
+  font-size: 2em;
+  margin: 15px auto 15px;
+}
+
+#salesLink {
+  margin-left: 15px;
+  margin-right: 15px;
+  vertical-align: bottom;
+}
+
+#linkToHome {
   font-size: 2.5em;
   margin-left: 10px;
 }
@@ -36,9 +65,11 @@ table {
   display: inline-block;
   margin-left: 10px;
   margin-top: 10px;
+
   border: solid;
   border-width: 10px;
   border-color: #444;
+  max-width: 20%;
 }
 
 thead {
@@ -49,14 +80,15 @@ td {
   empty-cells: hide;
   padding: 3px;
   border-radius: 2px;
-  min-width: 50px;
+  min-width: 45px;
+  /* width: 50px; */
   border-style: solid;
   border-color: salmon;
   border-width: 2px;
   text-align: center;
 }
 
-th {
+/* th {
   empty-cells: hide;
   padding: 3px;
   border-radius: 2px;
@@ -65,11 +97,12 @@ th {
   border-color: salmon;
   border-width: 3px;
   text-align: center;
-}
+} */
 
 form {
-  margin-top: 10px;
-  margin-left: 10px;
+  margin: 10 auto;
+  background-color: white;
+
 }
 
 form p {

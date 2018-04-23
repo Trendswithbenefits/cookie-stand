@@ -31,7 +31,7 @@ CookieStore.prototype.cookieArrSum = function() {
 
 CookieStore.prototype.cookieGen = function() {
   for (var i = 0; i < timePoint.length; i ++) {
-    var randNum = (Math.floor(Math.random() * (this.maxCust - this.minCust)) + this.minCust);
+    var randNum = parseInt((Math.floor(Math.random() * (this.maxCust - this.minCust)) + this.minCust));
     var randCookie = Math.round(randNum *this.aveCookieSale);
     this.cookieEachHour.push(randCookie);
   }
@@ -48,7 +48,7 @@ console.log(allCookieStores);
 //function to print the hours to the table header
 function renderHours() {
   var theadEl = document.getElementById('hours');
-//empty element for the far left cell of the header row
+  //empty element for the far left cell of the header row
   var thEl = document.createElement('th');
   theadEl.appendChild(thEl);
   for (var i =0; i < timePoint.length; i++) {
@@ -136,7 +136,7 @@ function onAddStoreFormSubmit(event) {
   event.preventDefault();
   console.log('The form was submitted');
   var formElement = event.target;
-  var newStore = new CookieStore(formElement.storeName.value, formElement.minCust.value, formElement.maxCust.value, formElement.aveCookieSale.value);
+  var newStore = new CookieStore(formElement.storeName.value, parseInt(formElement.minCust.value), parseInt(formElement.maxCust.value), parseInt(formElement.aveCookieSale.value));
   newStore.cookieGen();
   newStore.cookieArrSum();
   newStore.renderCookies();
@@ -146,7 +146,32 @@ var tableFormElement = document.getElementById('addStoreForm');
 tableFormElement.addEventListener('submit', onAddStoreFormSubmit);
 console.log('hi');
 
+//function to render footer and provide hourly cookie totals
 
+function cookieFoot() {
+  var allTheCookies = 0;
+  var footerEl =  document.getElementById('cookietotal');
+  footerEl.innerHTML = '';
+  var trEl = document.createElement('tr');
+  var tdEl = document.createElement('td');
+  tdEl.textContent = 'Hourly total';
+  trEl.appendChild(tdEl);
+  for (var i = 0; i < timePoint.length; i ++) {
+    var totalCookieEachHour = 0;
+    for (var j = 0; j < allCookieStores.length; j ++) {
+      totalCookieEachHour += allCookieStores[j].cookieEachHour[i];
+      allTheCookies += allCookieStores[j].cookieEachHour[i];
+    }
+    tdEl = document.createElement('td');
+    tdEl.textContent = totalCookieEachHour;
+    trEl.appendChild(tdEl);
+  }
+  tdEl = document.createElement('td');
+  tdEl.textContent = allTheCookies;
+  trEl.appendChild(tdEl);
+  footerEl.appendChild(trEl);
+}
+cookieFoot();
 
 // ***********************************
 // Beware: Thar Be Corpse Code Below!!
@@ -166,8 +191,8 @@ console.log('hi');
 //   randCust: function() {
 //     return Math.floor(Math.random() * (this.maxCust - this.minCust)) + this.minCust;
 //   },
-  //function for taking random # of customers, mutiplying them by the number of cookies
-  //bought each hour, and then pushing the resulting information into the custEachHour array
+//function for taking random # of customers, mutiplying them by the number of cookies
+//bought each hour, and then pushing the resulting information into the custEachHour array
 //   cookieGen: function() {
 //     for (var i = 0; i < timePoint.length; i ++) {
 //       var cookieHour = this.randCust()*this.aveCookieSale;
