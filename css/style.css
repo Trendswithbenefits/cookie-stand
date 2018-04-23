@@ -2,6 +2,10 @@
   font-family: sans-serif;
 }
 /* font-family: 'McLaren', cursive; */
+body {
+  background-position: fixed;
+  background-image: url("img/PikePlaceMarket-DSC01983b.jpg");
+}
 
 div {
   margin: 15px auto;
@@ -33,11 +37,17 @@ h1 {
 }
 
 #linkToHome {
+  font-size: 2.5em;
   margin-left: 10px;
 }
 
 #disclaimerGross {
   font-size: 1.5em;
+}
+
+#homePageLink {
+  font-size: 1em;
+  margin-left: 10px;
 }
 
 #salmonmascot {
@@ -46,18 +56,21 @@ h1 {
   }
 
 input {
-  /* display: block; */
+  display: block;
   margin: 10px;
   width: 50px;
 }
 
-/* table#cookiesales {
-  margin: auto;
+table {
+  display: inline-block;
+  margin-left: 10px;
+  margin-top: 10px;
+
   border: solid;
   border-width: 10px;
   border-color: #444;
   max-width: 20%;
-} */
+}
 
 thead {
   font-size: 20px;
@@ -89,6 +102,7 @@ td {
 form {
   margin: 10 auto;
   background-color: white;
+
 }
 
 form p {
@@ -109,4 +123,5 @@ fieldset {
   border-width: 5px;
   border-color: black;
   padding: 5px;
+  width: 40%;
 }

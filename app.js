@@ -26,7 +26,6 @@ CookieStore.prototype.cookieArrSum = function() {
   return this.cookieSum;
 };
 
-
 //function for taking random # of customers, mutiplying them by the number of cookies
 //bought each hour, and then pushing the resulting information into the custEachHour array
 
@@ -80,6 +79,10 @@ CookieStore.prototype.renderCookies = function() {
   tdEl.textContent = this.cookieArrSum();
   trEl.appendChild(tdEl);
 };
+
+
+
+
 
 //*****************************************
 //Calling all the functions for each store
